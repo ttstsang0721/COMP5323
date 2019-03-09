@@ -6,8 +6,9 @@
   
   
   <?php
-    $xml=simplexml_load_file("ROUTE_BUS.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file("ROUTE_BUS.xml");
     print_r($xml);
+    print_r("cannot load");
   ?>  
   
     <p>This is another test</p>  
