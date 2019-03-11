@@ -16,6 +16,27 @@ echo "My first PHP script!";
 ?>
 	
   <?php
+	$search = some_escaping_func($user_input);
+    	$uri = 'http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml'.$search;
+    	$response = file_get_contents($uri);
+    	$items_names = parse_xml($response);
+    	// output the result
+    	echo '<ul>';
+    	foreach ($items_names as $name) {
+        	echo '<li>'.htmlspecialchars($name).'</li>';
+   	}
+    	echo '</ul>';
+	
+	    function parse_xml($xml_str) {
+		$items = array();
+		$xml_doc = new SimpleXMLElement($xml_str);
+		foreach ($xml_doc->item as $item) {
+		    $items []= $item->name;
+		}
+		return $items;
+    		}
+	
+	<?--
 	$objDOM = new DOMDocument();
 
 	//Load xml file into DOMDocument variable
@@ -27,7 +48,6 @@ echo "My first PHP script!";
   		print $item->nodeName . " = " . $item->nodeValue . "<br>";
 		
 	}
-	<?--
 	//Find Tag element "config" and return the element to variable $node
 	$node = $objDOM->getElementsByTagName("ROUTE");
 
