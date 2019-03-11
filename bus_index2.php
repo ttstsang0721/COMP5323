@@ -24,8 +24,11 @@ echo "My first PHP script!";
 	$xml=simplexml_load_string($xmlstr) or die("Error: Cannot create object");
 	print_r($xml);
 	
+	$xml=simplexml_load_string($xmlobj) or die("Error: Cannot create object");
+	print_r($xml);
 	
-	<?--
+	
+	/*
 	$search = some_escaping_func($user_input);
     	$uri = 'http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml'.$search;
     	$response = file_get_contents($uri);
@@ -83,7 +86,7 @@ echo "My first PHP script!";
 	    $dbFF = $searchNode->getElementByTagName('FULL_FARE');
 		echo $dbFF;
 		echo "<br/>";
-	}-->
+	}*/
 
 
   ?>  
