@@ -28,25 +28,25 @@ echo "My first PHP script!";
 	foreach ($node as $searchNode) {
 	    $dbCompany = $searchNode->getElementByTagName('COMPANY_CODE');
 		echo $dbCompany;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbRN = $searchNode->getElementByTagName('ROUTE_NAMEE');
 		echo $dbRN;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbStartNameC = $searchNode->getElementByTagName('LOC_START_NAMEC');
 		echo $dbStartNameC;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbStartNameS = $searchNode->getElementByTagName('LOC_START_NAMES');
 		echo $dbStartNameS;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbStartNameE = $searchNode->getElementByTagName('LOC_START_NAMEE');
 		echo $dbStartNameE;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbHLE = $searchNode->getElementByTagName('HYPERLINK_E');
 		echo $dbHLE;
-		echo "<br/>;
+		echo "<br/>";
 	    $dbFF = $searchNode->getElementByTagName('FULL_FARE');
 		echo $dbFF;
-		echo "<br/>;
+		echo "<br/>";
 	}
 
 
