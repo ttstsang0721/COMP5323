@@ -16,6 +16,16 @@ echo "My first PHP script!";
 ?>
 	
   <?php
+	//$url = 'http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml'; 
+	//$xml = simpleXML_load_file($url,"SimpleXMLElement",LIBXML_NOCDATA);
+	$xmlstr = get_xml_from_url('http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml');
+	$xmlobj = new SimpleXMLElement($xmlstr);
+	
+	$xml=simplexml_load_string($xmlstr) or die("Error: Cannot create object");
+	print_r($xml);
+	
+	
+	<?--
 	$search = some_escaping_func($user_input);
     	$uri = 'http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml'.$search;
     	$response = file_get_contents($uri);
@@ -36,7 +46,6 @@ echo "My first PHP script!";
 		return $items;
     		}
 	
-	<?--
 	$objDOM = new DOMDocument();
 
 	//Load xml file into DOMDocument variable
