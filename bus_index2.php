@@ -19,7 +19,7 @@ echo "My first PHP script!";
 	$objDOM = new DOMDocument();
 
 	//Load xml file into DOMDocument variable
-	$objDOM->load(" http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
+	$objDOM = load(" http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
 
 	//Find Tag element "config" and return the element to variable $node
 	$node = $objDOM->getElementsByTagName("ROUTE");
