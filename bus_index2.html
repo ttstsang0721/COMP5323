@@ -11,12 +11,45 @@ th,td {
 </style>
   
 <body>
-  <?--
   <?php
-    $xml=simplexml_load_file("http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
-    print_r($xml);
-    print_r("cannot load");
-  ?>  -->
+	$objDOM = new DOMDocument();
+
+	//Load xml file into DOMDocument variable
+	$objDOM->load(" http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
+
+	//Find Tag element "config" and return the element to variable $node
+	$node = $objDOM->getElementsByTagName("ROUTE");
+
+	//looping if tag config have more than one
+	foreach ($node as $searchNode) {
+	    $dbCompany = $searchNode->getElementByTagName('COMPANY_CODE');
+		echo $dbCompany;
+		echo "<br/>;
+	    $dbRN = $searchNode->getElementByTagName('ROUTE_NAMEE');
+		echo $dbRN;
+		echo "<br/>;
+	    $dbStartNameC = $searchNode->getElementByTagName('LOC_START_NAMEC');
+		echo $dbStartNameC;
+		echo "<br/>;
+	    $dbStartNameS = $searchNode->getElementByTagName('LOC_START_NAMES');
+		echo $dbStartNameS;
+		echo "<br/>;
+	    $dbStartNameE = $searchNode->getElementByTagName('LOC_START_NAMEE');
+		echo $dbStartNameE;
+		echo "<br/>;
+	    $dbHLE = $searchNode->getElementByTagName('HYPERLINK_E');
+		echo $dbHLE;
+		echo "<br/>;
+	    $dbFF = $searchNode->getElementByTagName('FULL_FARE');
+		echo $dbFF;
+		echo "<br/>;
+	}
+
+
+
+
+
+  ?>  
   
 <h1>BUS ROUTE INFORMATION PAGE DEMO</h1>
 <br/>
