@@ -19,8 +19,15 @@ echo "My first PHP script!";
 	$objDOM = new DOMDocument();
 
 	//Load xml file into DOMDocument variable
-	$objDOM = load(" http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
-
+	$objDOM->load(" http://static.data.gov.hk/td/routes-fares-xml/ROUTE_BUS.xml");
+	
+	$x = $xmlDoc->documentElement;
+	
+	foreach ($x->childNodes AS $item) {
+  		print $item->nodeName . " = " . $item->nodeValue . "<br>";
+		
+	}
+	<?--
 	//Find Tag element "config" and return the element to variable $node
 	$node = $objDOM->getElementsByTagName("ROUTE");
 
@@ -47,7 +54,7 @@ echo "My first PHP script!";
 	    $dbFF = $searchNode->getElementByTagName('FULL_FARE');
 		echo $dbFF;
 		echo "<br/>";
-	}
+	}-->
 
 
   ?>  
