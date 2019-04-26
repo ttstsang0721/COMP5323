@@ -1,0 +1,38 @@
+<html>
+<head>
+        <title>BUS ROUTE SEARCH</title>
+</head>
+<body>
+<form method="get" action="search1.xq"> 
+    <label>Route Number: </label>
+    <input type="text" name="routeno"/>
+    <br/>
+    <br/>
+    <label>Bus Company: </label>
+    <select name="company">
+        <option value="">- Select -</option>
+        <option value="KMB">KMB</option>
+        <option value="CTB">CTB</option>
+        <option value="NWFB">NWFB</option>
+        <option value="LWB">LWB</option>        
+        <option value="NLB">NLB</option>        
+        <option value="KMB+CTB">KMB+CTB</option>
+        <option value="KMB+NWFB">KMB+NWFB</option>
+        <option value="XB">XB</option>        
+        <option value="DB">DB</option> 
+        <option value="PI">PI</option> 
+        <option value="LRTFeeder">LRTFeeder</option>         
+        
+    </select>
+    <br/>
+    <br/>    
+    <input type="submit" value="Submit" name="Submit"/>
+    <br/>
+</form>
+<br/>
+<form method="get" action="bus_route_display_1.xq"> 
+<br/>
+<input type="submit" label="Display all bus route in the XML File" value="Display all bus route in the XML File"/>
+</form>
+</body>
+</html>
